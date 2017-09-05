@@ -10,7 +10,8 @@
       ],
 
       "disk_size": "{{ user `disk_size` }}",
-      "guest_additions_mode": "attach",
+      "guest_additions_mode": "upload",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "{{ user `virtualbox_guest_os_type` }}",
       "headless": "{{ user `headless` }}",
       "http_directory": "http",
@@ -53,6 +54,7 @@
       "scripts": [
         "script/sshd.sh",
         "script/update.sh",
+        "script/virtualbox.sh",
         "script/vagrant.sh",
         "script/cleanup.sh"
       ],

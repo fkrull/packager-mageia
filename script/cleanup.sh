@@ -4,8 +4,8 @@ echo "==> Clear out machine id"
 rm -f /etc/machine-id
 touch /etc/machine-id
 
-echo "==> Cleaning up cache of metadata and packages to save space"
-rm -rf /var/cache/urpmi/*
+echo "==> Cleaning up cache of packages to save space"
+urpmi --clean
 
 echo "==> Removing temporary files used to build box"
 rm -rf /tmp/*
