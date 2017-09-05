@@ -201,9 +201,7 @@ $o = {
              'ufraw-gimp',
              'usbutils',
              'vaapi-driver-intel',
-             'vboxadditions-kernel-desktop-latest',
              'vim-minimal',
-             'virtualbox-guest-additions',
              'vlc-plugin-flac',
              'vlc-plugin-pulse',
              'vlc-plugin-speex',
@@ -224,7 +222,8 @@ $o = {
              'openssh-server',
            ],
        'enabled_media' => [
-          'Core Release'
+          'Core Release',
+          'Core Updates'
         ],
        'keyboard' => {
            'GRP_TOGGLE' => '',
