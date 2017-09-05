@@ -303,5 +303,12 @@ $o = {
           'shell' => '/bin/bash',
           'uid' => undef
         }
-      ]
+      ],
+      'postInstall' => "
+        echo 'ACCEPT net \$FW tcp 22' > /etc/shorewall/rules
+        echo 'INCLUDE rules.drakx' >> /etc/shorewall/rules
+        echo 'Defaults:vagrant !requiretty' > /etc/sudoers.d/vagrant
+        echo '%vagrant ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/vagrant
+        chmod 440 /etc/sudoers.d/vagrant
+      "
      };

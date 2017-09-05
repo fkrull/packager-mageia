@@ -47,7 +47,7 @@
     "memory": "1024",
     "no_proxy": "{{env `no_proxy`}}",
     "rsync_proxy": "{{env `rsync_proxy`}}",
-    "shutdown_command": "echo 'vagrant' | su -c 'shutdown -h now'",
+    "shutdown_command": "sudo shutdown -h now",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "update": "false",
