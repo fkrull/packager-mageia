@@ -1,0 +1,13 @@
+{
+  "mirror_server": "server:mirror.netcologne.de",
+  "mirror_directory": "/mageia/distrib/6/x86_64",
+  "auto_inst_file": "mageia6-auto_inst.cfg.pl",
+
+  "iso_checksum": "f27470ed75512b96b2d0e6d00061e1b6f77ae1c565232a479182f25831b4e6db77b0353d27dda05ab6227c7ed041626a85b451b0d2af63a4fafcb6b63b2721f9",
+  "iso_checksum_type": "sha512",
+  "iso_url": "http://mirror.netcologne.de/mageia/distrib/6/x86_64/install/images/Mageia-6-netinstall-x86_64.iso",
+
+  "virtualbox_guest_os_type": "Mandriva_64",
+
+  "vm_name": "mageia6-64"
+}

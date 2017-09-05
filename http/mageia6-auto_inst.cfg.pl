@@ -1,23 +1,16 @@
 #!/usr/bin/perl -cw
-# 
+#
 # You should check the syntax of this file before using it in an auto-install.
 # You can do this with 'perl -cw auto_inst.cfg.pl' or by executing this file
 # (note the '#!/usr/bin/perl -cw' on the first line).
 $o = {
        'X' => {
-		'monitors' => [
-				{
-				  'VendorName' => 'Plug\'n Play',
-				  'manually_chosen' => 1
-				}
-			      ],
-		'resolution_wanted' => 'x'
 	      },
        'authentication' => {
 			     'sha512' => 1,
 			     'shadow' => 1
 			   },
-       'autoExitInstall' => '',
+       'autoExitInstall' => '1',
        'default_packages' => [
 			       'acpi',
 			       'acpid',
@@ -226,16 +219,13 @@ $o = {
 			       'xorg-x11-75dpi-fonts',
 			       'yelp',
 			       'zeroconf-ioslave',
-			       'zip'
+			       'zip',
+
+             'openssh-server',
 			     ],
        'enabled_media' => [
-			    'Core Release',
-			    'Nonfree Release'
+			    'Core Release'
 			  ],
-       'interactiveSteps' => [
-			       'doPartitionDisks',
-			       'formatPartitions'
-			     ],
        'keyboard' => {
 		       'GRP_TOGGLE' => '',
 		       'KEYBOARD' => 'us'
@@ -249,37 +239,6 @@ $o = {
 				},
 		     'utf8' => 1
 		   },
-       'mouse' => {
-		    'EmulateWheel' => undef,
-		    'MOUSETYPE' => 'ps/2',
-		    'Protocol' => 'ExplorerPS/2',
-		    'device' => 'input/mice',
-		    'evdev_mice' => [
-				      {
-					'HWheelRelativeAxisButtons' => '7 6',
-					'device' => '/dev/input/by-id/usb-noserial-event-mouse'
-				      },
-				      {
-					'HWheelRelativeAxisButtons' => '7 6',
-					'device' => '/dev/input/by-id/usb-VirtualBox_USB_Tablet-event-mouse'
-				      }
-				    ],
-		    'evdev_mice_all' => [
-					  {
-					    'HWheelRelativeAxisButtons' => '7 6',
-					    'device' => '/dev/input/by-id/usb-noserial-event-mouse'
-					  },
-					  {
-					    'HWheelRelativeAxisButtons' => '7 6',
-					    'device' => '/dev/input/by-id/usb-VirtualBox_USB_Tablet-event-mouse'
-					  }
-					],
-		    'name' => 'Any PS/2 & USB mice',
-		    'nbuttons' => 7,
-		    'synaptics' => undef,
-		    'type' => 'Universal',
-		    'wacom' => []
-		  },
        'net' => {
 		  'PROFILE' => 'default',
 		  'ethernet' => {},
@@ -313,41 +272,15 @@ $o = {
 		  'zeroconf' => {}
 		},
        'partitioning' => {
-			   'auto_allocate' => '',
-			   'clearall' => 0,
-			   'eraseBadPartitions' => 0,
-			   'fdisk' => undef,
-			   'no_bad_drives' => undef,
-			   'nodmraid' => undef
+			   'auto_allocate' => '1',
+			   'clearall' => 1
 			 },
-       'partitions' => [
-			 {
-			   'VG_name' => undef,
-			   'fs_type' => 'ext4',
-			   'hd' => undef,
-			   'level' => undef,
-			   'mntpoint' => '/',
-			   'options' => 'relatime,acl',
-			   'parts' => undef,
-			   'size' => 28384807
-			 },
-			 {
-			   'VG_name' => undef,
-			   'fs_type' => 'swap',
-			   'hd' => undef,
-			   'level' => undef,
-			   'mntpoint' => 'swap',
-			   'options' => 'defaults',
-			   'parts' => undef,
-			   'size' => 5154344
-			 }
-		       ],
        'security' => 1,
        'security_user' => undef,
        'superuser' => {
 			'gid' => '0',
 			'home' => '/root',
-			'pw' => '$6$JrrzlmeQCL6dNOye$muPmatO8D4nIqDiUrGmxZDAJs1cC32sjkxsRsZTGDS0TSPfvx./4nEaLMIOrOIV97EkQ54ZwwsbILKi5V4KLD1',
+			'password' => 'vagrant',
 			'realname' => 'root',
 			'shell' => '/bin/bash',
 			'uid' => '0'
@@ -355,14 +288,15 @@ $o = {
        'timezone' => {
 		       'UTC' => 1,
 		       'ntp' => undef,
-		       'timezone' => 'America/New_York'
+		       'timezone' => 'UTC'
 		     },
        'users' => [
 		    {
 		      'gid' => undef,
 		      'groups' => [
-				    'adm'
+				    'wheel'
 				  ],
+          'password' => 'vagrant',
 		      'icon' => 'default',
 		      'name' => 'vagrant',
 		      'realname' => undef,
