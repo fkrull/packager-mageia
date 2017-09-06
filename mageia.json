@@ -40,6 +40,7 @@
   "provisioners": [
     {
       "environment_vars": [
+        "ENABLE_UPDATE_MEDIA={{ user `enable_update_media` }}",
         "UPDATE={{user `update`}}",
         "INSTALL_VAGRANT_KEY={{user `install_vagrant_key`}}",
         "SSH_USERNAME={{user `ssh_username`}}",
@@ -76,6 +77,7 @@
     "shutdown_command": "sudo shutdown -h now",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
+    "enable_update_media": "true",
     "update": "false",
     "version": "0.1.0",
     "vm_name": null,

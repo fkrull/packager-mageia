@@ -222,8 +222,7 @@ $o = {
              'openssh-server',
            ],
        'enabled_media' => [
-          'Core Release',
-          'Core Updates'
+          'Core Release'
         ],
        'keyboard' => {
            'GRP_TOGGLE' => '',
