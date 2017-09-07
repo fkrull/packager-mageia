@@ -11,5 +11,5 @@
   "virtualbox_guest_os_type": "Mandriva_64",
   "vagrantfile_template": "vagrant/Vagrantfile.tpl",
   "box_tag": "fkrull/mageia6-64",
-  "version_description": "Mageia 6 (Plasma)\n\nPacker templates: https://github.com/fkrull/packager-mageia"
+  "version_description": "Mageia 6 (Plasma)\n\nPacker templates: https://github.com/fkrull/packer-mageia"
 }
