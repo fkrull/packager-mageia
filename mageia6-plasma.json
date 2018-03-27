@@ -5,11 +5,12 @@
 
   "mirror_server": "server:mirror.netcologne.de",
   "mirror_directory": "/mageia/distrib/6/x86_64",
-  "auto_inst_file": "mageia6-auto_inst.cfg.pl",
+  "auto_inst_file": "mageia6-plasma-auto_inst.cfg.pl",
 
-  "vm_name": "mageia6-64",
+  "vm_name": "mageia6-plasma",
   "virtualbox_guest_os_type": "Mandriva_64",
-  "vagrantfile_template": "vagrant/Vagrantfile.tpl",
+  "vagrantfile_template": "vagrant/Vagrantfile.gui.tpl",
   "box_tag": "fkrull/mageia6-64",
-  "version_description": "Mageia 6 (Plasma)\n\nPacker templates: https://github.com/fkrull/packer-mageia"
+  "version_description": "Mageia 6 (Plasma)\nPacker templates: https://github.com/fkrull/packer-mageia",
+  "version": "6"
 }
