@@ -58,7 +58,8 @@
         "script/vagrant.sh",
         "script/cleanup.sh"
       ],
-      "type": "shell"
+      "type": "shell",
+      "expect_disconnect": true
     }
   ],
 
@@ -94,9 +95,7 @@
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "enable_update_media": "true",
-    "update": "true",
-    "version": "0.1.0",
-    "vm_name": null,
+    "update": "false",
     "virtualbox_post_shutdown_delay": "10s"
   }
 }
